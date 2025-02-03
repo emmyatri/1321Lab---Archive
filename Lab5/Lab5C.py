@@ -4,3 +4,8 @@
 #Instructor: Roshni Satish
 #Name: Amelia Ellingson
 #Lab#: Lab5C
+
+user_input = ""
+while user_input != "please":
+    user_input = input('If you would like to stop this program, say "please": ')
+print("Program complete")
