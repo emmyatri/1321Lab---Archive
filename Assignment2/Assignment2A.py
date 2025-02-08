@@ -18,13 +18,13 @@ elif 50 <= total_purchase <= 200:
         discount = total_purchase * .10
     else:
         discount = round(float(total_purchase * .5),2)
-    print("Your discount is: " + str(discount))
+    print("Your discount is: $" + str(discount))
 elif total_purchase >= 200:
     if member_status.startswith('y'):
         discount = total_purchase*.15
     else:
         discount = round(float(total_purchase*.10),2)
-    print("Your discount is: " + str(discount))
+    print("Your discount is: $" + str(discount))
 
 
 final_total = str(total_purchase - discount)
