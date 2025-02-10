@@ -39,12 +39,12 @@ if creditscore == "Poor":
     print("You do not qualify for a loan due to poor credit.")
 #income to credit score match case and approval
 else:
-    if income >=100000 and creditscore == "Good":
+    if income >=100_000 and creditscore == "Good":
         print("You qualify for a Premium Loan.")
-    elif income >= 50000 < 100000:
+    elif income >= 50_000 < 100_000:
         if creditscore == "Good" or creditscore == "Fair":
             print("You qualify for a Standard Loan")
-    elif income < 50000 and creditscore == "Fair":
+    elif income < 50_000 and creditscore == "Fair":
         print("You qualify for a Basic Loan.")
     else:
         print("Your income is too low for a loan")
