@@ -3,60 +3,45 @@
 #Term: Spring 2025
 #Instructor: Roshni Satish
 #Name: Amelia Ellingson
-#Lab#: Lab6A
+#Lab#:Lab6A
 
-def multiplication(a, b) -> int:
-    result = 0
-    for _ in range(b):
-        result += (a)
-    return result
+def main():
+    running = True
+    while running:
+        print("Multiplication and Exponent Calculator")
+        print("Choose option 1 for Multiplication")
+        print("Choose option 2 for Exponentiation")
+        print("Choose option 3 to Exit")
 
-def exponentiate(base, exponent) -> int:
-    if exponent == 0:
-        return 1
-    result = 1
-    for _ in range(exponent):
-        result = 0
-        for _ in range(exponent):
-            result += base
-        return result
+        choice = int(input())
 
-def user_input() -> int:
-    print("Multiplication and Exponent Calculator\nChoose option 1 for Multiplication"
-          "\nChoose option 2 for Exponentiation\nChoose option 3 to Exit")
-    return int(input())
+        match choice:
 
-while True:
-    try:
-        operation = user_input()
-
-        match operation:
             case 1:
-                a = int(input("Enter an operand: "))
-                b = int(input("Enter another operand: "))
-                result = multiplication(a,b)
-                print(f"{a} x {b} = {result}")
-                break
+                operand1 = int(input("\nEnter an operand: "))
+                operand2 = int(input("Enter the other operand: "))
+                result = 0
+                for _ in range(operand2):
+                    result += operand1
+                print(f"{operand1} x {operand2} = {result}\n")
 
             case 2:
-                base = int(input("Enter an operand: "))
-                exponent = int(input("Enter another operand: "))
-                result = exponentiate(base, exponent)
-                print(f"{base}^{exponent} = {result}")
-                break
+                base = int(input("\nEnter the base: "))
+                exponent = int(input("Enter the exponent: "))
+                result = 1
+                for _ in range(exponent):
+                    result1 = 0
+                    for _ in range(base):
+                        result1 += result
+                    result = result1
+                print(f"{base}^({exponent}) = {result}\n")
 
             case 3:
-                print("Closing the Calculator...")
+                print("\nClosing the calculator...")
                 break
 
             case _:
-                print("Invalid Choice")
-                break
+                print("\nInvalid Choice\n")
 
-
-    except ValueError:
-        print("Invalid Choice)")
-
-
-
-
+if __name__ == "__main__":
+    main()
