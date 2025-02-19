@@ -14,12 +14,26 @@ if odd_num % 2 == 0:
 
 number = 0
 
-for i in range (number//2 + 1):
-    for j in range(number//2 - i):
+for i in range(odd_num//2 + 1):
+
+    for j in range(odd_num//2 - i):
         print(" ", end="")
 
     for j in range(2*i + 1):
         print(number, end="")
-        number = (number + 1)
+        number = (number + 1) % 10
 
-        print()
+    print()
+
+for i in range(odd_num//2 - 1, -1, -1):
+    for j in range(odd_num//2 - i):
+        print(" ", end="")
+
+    for j in range(2*i + 1):
+        print(number, end="")
+        number = (number + 1) % 10
+
+    print()
+
+
+
