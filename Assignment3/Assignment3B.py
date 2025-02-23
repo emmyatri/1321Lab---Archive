@@ -22,7 +22,7 @@ while string:
     #first character
     current_char = string[0]
 
-    #count occurences by comparing the length before and after replacement
+    #count occurrence by comparing the length before and after replacement
     original_length = 0
     new_length = 0
 
