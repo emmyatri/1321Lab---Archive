@@ -37,9 +37,9 @@ while string:
     freq = original_length - new_length
 
     if freq == 1:
-        print(f"{current_char} appears {freq} time.")
+        print(f"{current_char} appears {freq} time")
     else:
-        print(f"{current_char} appears {freq} times.")
+        print(f"{current_char} appears {freq} times")
 
     string = post_string
 
