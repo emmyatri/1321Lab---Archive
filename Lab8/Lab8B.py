@@ -23,13 +23,16 @@ def main():
             case 1:
                 friend_name = input("\nEnter your friend's name: ")
                 friend_age = int(input("Enter your friend's age: "))
-                friend_list.append(f"Name: {friend_name}, Age: {friend_age}")
+                friend_tuple = (f"Name: {friend_name}, Age: {friend_age}")
+                friend_list.append(friend_tuple)
                 print("Friend added")
 
             case 2:
+                print()
                 for x in friend_list:
-                    print(f"{x}")
+                    print(x)
             case 3:
+                print()
                 print("Shutting down...")
                 break
 

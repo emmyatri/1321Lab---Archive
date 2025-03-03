@@ -34,13 +34,13 @@ def main():
                 else:
                     print(f"No such email in mailing list: {del_email}")
             case 3:
+                print()
                 for x in email_list:
                     print(x)
             case 4:
+                print()
                 print("Shutting down...")
                 break
-
-
 
 
 
