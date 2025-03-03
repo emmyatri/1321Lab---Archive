@@ -11,3 +11,4 @@ def check_length(password):
 
 def check_upper_lower(password):
     
+    
