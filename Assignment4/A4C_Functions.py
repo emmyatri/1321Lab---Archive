@@ -24,7 +24,7 @@ def Display_Main_Menu():
 
 def Deposit(balance):
         deposit = int(input("Enter the amount to deposit: $"))
-        new_balance = deposit + balance
+        new_balance = str(deposit + balance)
         print(new_balance)
 
 def Withdraw(balance):
