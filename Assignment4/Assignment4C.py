@@ -15,7 +15,7 @@ def main():
 
     while True:
         try:
-            balance = round(float(input("Enter your initial balance: $")), 2)
+            balance = (float(input("Enter your initial balance: $")))
             if balance > 0:
                 break
             else:
@@ -26,19 +26,23 @@ def main():
     new_balance = balance
 
     while True:
-
         choice = Display_Main_Menu()
 
         if choice == 1:
             balance = Deposit(balance)
+            print()
         elif choice == 2:
             balance = Withdraw(balance)
+            print()
         elif choice == 3:
-            balance = Check_balance()
+            balance = Check_balance(balance)
+            print()
         elif choice == 4:
-            print(f"\nThank you for using our ATM, {name}! \nFinal Balance: ${balance}")
+            print(f"\nGoodbye {name}! Thank you for using the ATM.")
+            break
         else:
             print("Invalid choice. Please try again.")
+            print()
 
 if __name__ == "__main__":
     main()
