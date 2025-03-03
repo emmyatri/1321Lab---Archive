@@ -19,16 +19,14 @@ def main():
 
         user_input = int(input("Make your selection: "))
 
-
         match user_input:
 
             case 1:
-                print()
-                email = input("Enter the email to be added: ")
+                email = input("\nEnter the email to be added: ")
                 email_list.append(email)
+                print(f"{email} was added to the mailing list.")
 
             case 2:
-                print()
                 del_email = input("Enter the email to be deleted: ")
                 if del_email in email_list:
                     email_list.remove(del_email)
@@ -36,13 +34,11 @@ def main():
                 else:
                     print(f"No such email in mailing list: {del_email}")
             case 3:
-                print()
-                print(email_list)
+                for x in email_list:
+                    print(x)
             case 4:
                 print("Shutting down...")
                 break
-            case _:
-                print("Invalid input. Enter a number (1-4)")
 
 
 
