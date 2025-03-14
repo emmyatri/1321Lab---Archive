@@ -18,7 +18,6 @@ def Display_Main_Menu():
 
         if 1 <= option_choice <= 4:
             return option_choice
-        break
 
 
 
