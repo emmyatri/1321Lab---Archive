@@ -4,3 +4,11 @@
 #Instructor: Roshni Satish
 #Name: Amelia Ellingson
 #Lab#: Lab9B
+
+
+registration_log = []
+
+def login(username, password):
+
+
+def register(username, password):
