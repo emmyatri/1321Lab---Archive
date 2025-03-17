@@ -9,26 +9,24 @@ def pairDifference():
 
     num = input("Enter a list of numbers: ")
 
-    try:
+    number = [int(x.strip()) for x in num.split(",")]
 
-        number_list = [int(x.strip()) for x in num.split(",")]
-
-        if len(number_list) < 2:
+    if len(number) < 2:
             print("Not enough numbers to calculate differences.")
             return tuple()
 
-        difference = []
-        for i in range(number_list - 1):
-            listdiff = abs(number_list[i] - number_list[i + 1])
-            difference.append(listdiff)
+    difference = []
+    for i in range (len(number) - 1):
+            diff = abs(number[i] - number[i+1])
+            difference.append(diff)
 
-        result = tuple(difference)
-        print(f"The absolute differences between consecutive numbers: {result}")
-        return result
-
-
-    except ValueError:
-        print("Invalid input. Please enter comma-separated numbers")
+    result = tuple(difference)
+    print(f"The absolute differences between consecutive numbers: {result}")
+    return result
 
 
-pairDifference()
+def main():
+    pairDifference()
+
+if __name__ == "__main__":
+    main()
