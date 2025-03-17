@@ -5,7 +5,6 @@
 #Name: Amelia Ellingson
 #Lab#: Lab9B
 
-
 def register(users):
     print("\n[Register]")
     username = input("Username: ")
@@ -34,6 +33,7 @@ def main():
             if username in users and users[username] == password:
                 print("Success!")
 
+
                 while True:
                     print("\nChoose an option \n3 - Change Password \n4 - Logout \nE - Exit")
                     login_choice = input()
@@ -46,7 +46,7 @@ def main():
                         break
                     elif login_choice == 'E':
                         print("\nTerminating...")
-                        break
+                        return
                     else:
                         print("Invalid choice.")
             else:
@@ -56,7 +56,7 @@ def main():
             register(users)
 
         elif choice == 'E':
-            print("Terminating...")
+            print("\nTerminating...")
             break
         else:
             print("Invalid choice.")
