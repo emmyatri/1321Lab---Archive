@@ -5,3 +5,11 @@
 #Name: Amelia Ellingson
 #Lab#: Assignment5B
 
+def main():
+    board = []
+    width = input("Enter the width of the grid: ")
+    height = input("Enter the height of the grid: ")
+
+
+if __name__ == "__main__":
+    main()
