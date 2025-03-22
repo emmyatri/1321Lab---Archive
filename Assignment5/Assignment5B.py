@@ -7,46 +7,65 @@
 
 import random
 
-def game_board (width, height):
+def treasure_game():
+    width = int(input("Enter the width of the grid: "))
+    height = int(input("Enter the height of the grid: "))
+
     board = []
     numberOfUndiscoveredTreasures = 0
 
-    first_row = []
-    for i in range(width):
-        rand_num = random.random()
-        if rand_num >= 0.7:
-            first_row.append("T")
-            numberOfUndiscoveredTreasures += 1
-        else:
-            first_row.append("O")
-    board.append(first_row)
 
-    for i in range(height - 1):
+    for i in range(height):
         row = []
         for j in range(width):
-            rand_num = random.random()
-            if rand_num >= 0.7:
+            if random.random() >= 0.7:
                 row.append("T")
                 numberOfUndiscoveredTreasures += 1
             else:
                 row.append("O")
         board.append(row)
 
-    return board, numberOfUndiscoveredTreasures
+    initial_board = [['O' for _ in range(width)] for _ in range(height)]
+    print(f"The number of undiscovered treasures is {numberOfUndiscoveredTreasures}")
 
-def print_board(board, show_treasure=False):
-    for row in board:
-        for cell in row:
-            if not show_treasure and cell == "T":
-                print('O', end="")
-            else:
-                print(cell, end="")
-        print()
+    while numberOfUndiscoveredTreasures > 0:
+
+        row = int(input(f"Enter the row number (0 to {height-1}): "))
+        column = int(input(f"Enter the column number (0 to {width-1}): "))
+
+        if row < 0 or row >= height or column <0 or column >= width:
+            print("Invalid coordinates! Try again")
+            continue
+
+        if board[row][column] == "X":
+            print("You've already found this treasure.")
+            continue
+
+        if board[row][column] == "T":
+            print("Congratulations! You found a treasure!")
+            initial_board[row][column] = 'X'
+            numberOfUndiscoveredTreasures -= 1
+            for row in initial_board:
+                print(" ".join(row))
+
+        else:
+            print("No treasure here, try again!")
+            initial_board[row][column] = 'O'
+
+    if numberOfUndiscoveredTreasures == 0:
+        print("Congratulations! You found all the treasure!")
+        for row in initial_board:
+            print(" ".join(row))
+
 
 def main():
-    width = int(input("Width: "))
-    height = int(input("Height: "))
-    board, treasures = game_board(width, height)
+    treasure_game()
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
