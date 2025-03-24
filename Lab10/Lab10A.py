@@ -13,27 +13,23 @@ class Chair:
         self.material = material
 
 
-
 def main():
     print("You are about to create a chair.")
 
-    #user input
     numOfLegs = int(input("How many legs does your chair have? "))
 
-    #handling boolean
     rolling = input("Is your chair rolling (true/false): ").lower()
-    rolling_chair = rolling == "true"
+    chair_rolling = rolling == "true"
 
-    material = input("What material is your chair made of? ")
+    material = input("What is your chair made of? ")
 
-    chair = Chair(numOfLegs, rolling_chair, material)
+    chair = Chair(numOfLegs, chair_rolling, material)
 
-    print(f"Your chair has {chair.numOfLegs} legs, is {'' if chair.rolling == True  else "not" }rolling, and is made of {chair.material}.")
+    print(f"Your chair has {chair.numOfLegs} legs, is {"" if chair.rolling == True else "not"} rolling, and is made of {chair.material}.")
+    default_chair = Chair(4, False, "wood")
     print("This program is going to change that.")
+    print(f"Your chair has {default_chair.numOfLegs} legs, is {"" if default_chair.rolling == True else "not"} rolling, and is made of {default_chair.material}.")
 
-    #second chair
-    chair2 = (Chair(4, False, "wood"))
-    print(f"Your chair has {chair2.numOfLegs} legs, is {'' if chair2.rolling else "not"} rolling, and is made of {chair2.material}.")
 
 
 
