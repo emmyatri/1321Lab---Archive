@@ -3,7 +3,7 @@ from pygame.locals import *
 
 pygame.init()
 
-resolution = (600, 600)
+resolution = (500,500)
 screen = pygame.display.set_mode(resolution)
 
 pygame.display.set_mode(resolution)
@@ -20,19 +20,8 @@ while True:
         if keys[pygame.K_ESCAPE]:
             sys.exit(0)
 
-    screen.fill(color=(0, 0, 0))
-
-    # surface 1
-    surf1 = pygame.Surface((60, 60))
-    surf1.fill((255, 0, 0))
-
-    screen.blit(surf1, (0, 0))
-    screen.blit(surf1, (540, 0))
-    screen.blit(surf1, (0, 540))
-    screen.blit(surf1, (540, 540))
-    screen.blit(surf1, (270, 270))
+    screen.fill(color=(0,0,0))
 
     pygame.display.flip()
 
     clock.tick(60)
-
