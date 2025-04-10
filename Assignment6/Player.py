@@ -11,10 +11,11 @@ from Config import *
 class Player:
     def __init__(self):
         self.speed = PLAYER_SPEED
-        self.sprite = PLAYER_IMAGE
+        self.sprite = pygame.image.load(PLAYER_IMAGE)
         self.rect = self.sprite.get_rect()
+        self.rect.midbottom = (WIDTH//2, HEIGHT - 20)
         self.alive = True
-        self.deadSound = PLAYER_DEATH_SOUND
+        self.deadSound = pygame.mixer.Sound(PLAYER_DEATH_SOUND)
 
     def move(self):
 
@@ -22,11 +23,11 @@ class Player:
 
         if keys[pygame.K_a]:
             if self.rect.left > 0:
-                self.rect.x -= self.speed
+                self.rect = self.rect.move (-self.speed,0)
 
         if keys[pygame.K_d]:
             if self.rect.right < WIDTH:
-                self.rect.X += self.speed
+                self.rect = self.rect.move (self.speed,0)
 
     def draw(self):
         SCREEN.blit(self.sprite, self.rect)

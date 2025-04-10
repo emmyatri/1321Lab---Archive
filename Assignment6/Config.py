@@ -13,6 +13,7 @@ pygame.mixer.init()
 ##################################
 WIDTH, HEIGHT = 480,800
 RESOLUTION = (WIDTH, HEIGHT)
+FPS = 60
 SCREEN = pygame.display.set_mode(RESOLUTION)
 pygame.display.set_mode(RESOLUTION)
 
@@ -29,8 +30,8 @@ WHITE = (255,255,255)
 #player settings
 ##################################
 PLAYER_SPEED = 12
-PLAYER_IMAGE = pygame.image.load("player_sprite.png")
-PLAYER_DEATH_SOUND = pygame.mixer.Sound("player_dead.ogg")
+PLAYER_IMAGE = "img/player_sprite.png"
+PLAYER_DEATH_SOUND = "audio/player_dead.ogg"
 
 #meteor settings
 ##################################
@@ -42,10 +43,12 @@ METEOR_SPEEDS = {
 }
 
 PATHS = {
-    "big" : ["meteor_big_1.png", "meteor_big_2.png", "meteor_big_3.png", "meteor_big_4.png"],
-    "medium" : ["meteor_med_1.png", "meteor_med_2.png"],
-    "small" : ["meteor_small_1.png", "meteor_small_2.png"],
-    "tiny" : ["meteor_tiny_1.png", "meteor_tiny_2.png"]
+    "big" : ["img/meteor_big_1.png", "img/meteor_big_2.png", "img/meteor_big_3.png", "img/meteor_big_4.png"],
+    "medium" : ["img/meteor_med_1.png", "img/meteor_med_2.png"],
+    "small" : ["img/meteor_small_1.png", "img/meteor_small_2.png"],
+    "tiny" : ["img/meteor_tiny_1.png", "img/meteor_tiny_2.png"]
 }
 
-SOUNDS = ["spawn_sound_1.ogg", "spawn_sound_2.ogg", "spawn_sound_3.ogg"]
+SOUNDS = ["audio/spawn_sound_1.ogg", "audio/spawn_sound_2.ogg", "audio/spawn_sound_3.ogg"]
+
+BACKGROUND_IMAGE = "img/bg.png"

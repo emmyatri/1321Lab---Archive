@@ -12,16 +12,14 @@ class Meteor:
     def __init__(self):
 
         #meteor types
-        self.types = ["big", "medium", "small", "tiny"]
-        self.type = random.choice(self.types)
+        self.types = random.choice(list(METEOR_SPEEDS.keys()))
 
         #meteor speed by type
-        self.speed = METEOR_SPEEDS[self.type]
+        self.speed = METEOR_SPEEDS[self.types]
 
         #image loading
-        sprite_choice = PATHS[self.type]
-        sprite_final = random.choice(sprite_choice)
-        self.sprite = pygame.image.load(sprite_final)
+        sprite_choice = random.choice(PATHS[self.types])
+        self.sprite = pygame.image.load(sprite_choice).convert_alpha()
 
         #create rectangle
         self.rect = self.sprite.get_rect()
@@ -37,8 +35,7 @@ class Meteor:
         self.rect.topleft = (random_x, 0)
 
     def fall(self):
-        self.rect.y += self.speed
-        return self.rect.top < HEIGHT
+        self.rect = self.rect.move(0, self.speed)
 
     def draw(self,surface):
         surface.blit(self.sprite, self.rect)
